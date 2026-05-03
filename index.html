@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariage de Colin & Nikta · 5 septembre 2026</title>
+    <meta name="description" content="Save the date — Mariage de Colin & Nikta, 5 septembre 2026">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&display=swap" rel="stylesheet">
+
+    <!-- Préchargement intelligent : version MD pour mobiles, HD pour desktop -->
+    <link rel="preload" as="image" href="assets/aqueduc-md.webp" media="(max-width: 1280px)">
+    <link rel="preload" as="image" href="assets/aqueduc.webp" media="(min-width: 1281px)">
+    <link rel="preload" as="image" href="assets/mur-fond-md.webp" media="(max-width: 1280px)">
+    <link rel="preload" as="image" href="assets/mur-fond.webp" media="(min-width: 1281px)">
+    <link rel="preload" as="image" href="assets/maison-sans-porte-md.webp" media="(max-width: 1280px)">
+    <link rel="preload" as="image" href="assets/maison-sans-porte.webp" media="(min-width: 1281px)">
+    <link rel="preload" as="image" href="assets/porte-gauche-md.webp" media="(max-width: 1280px)">
+    <link rel="preload" as="image" href="assets/porte-gauche.webp" media="(min-width: 1281px)">
+    <link rel="preload" as="image" href="assets/porte-droite-md.webp" media="(max-width: 1280px)">
+    <link rel="preload" as="image" href="assets/porte-droite.webp" media="(min-width: 1281px)">
+    <link rel="preload" as="image" href="assets/statue-md.webp" media="(max-width: 1280px)">
+    <link rel="preload" as="image" href="assets/statue.webp" media="(min-width: 1281px)">
+    <link rel="preload" as="image" href="assets/collines-devant-md.webp" media="(max-width: 1280px)">
+    <link rel="preload" as="image" href="assets/collines-devant.webp" media="(min-width: 1281px)">
+    <link rel="preload" as="image" href="assets/plantes-md.webp" media="(max-width: 1280px)">
+    <link rel="preload" as="image" href="assets/plantes.webp" media="(min-width: 1281px)">
+    <link rel="preload" as="image" href="assets/blees-devant-md.webp" media="(max-width: 1280px)">
+    <link rel="preload" as="image" href="assets/blees-devant.webp" media="(min-width: 1281px)">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+    <!-- Écran de chargement -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <p class="loader-text">C &amp; N</p>
+            <div class="loader-bar"><div class="loader-bar-fill" id="loaderBarFill"></div></div>
+            <p class="loader-subtitle">Chargement…</p>
+        </div>
+    </div>
+
+    <!-- Indicateur de scroll -->
+    <div class="scroll-hint" id="scrollHint">
+        <span>Faites défiler</span>
+        <div class="scroll-arrow"></div>
+    </div>
+
+    <!-- SECTION 1 : Animation parallaxe -->
+    <section class="parallax-stage" id="stage">
+        <div class="scene-container">
+            <!-- Ciel / arrière-plan -->
+            <div class="layer-sky" id="sky"></div>
+
+            <!-- Plans superposés (du fond vers l'avant)
+                 srcset = sélection auto HD/MD selon la largeur d'écran -->
+            <div class="layer layer-aqueduc" id="layerAqueduc">
+                <img alt="" decoding="async"
+                     src="assets/aqueduc.webp"
+                     srcset="assets/aqueduc-md.webp 1280w, assets/aqueduc.webp 2400w"
+                     sizes="100vw">
+            </div>
+
+            <div class="layer layer-mur" id="layerMur">
+                <img alt="" decoding="async"
+                     src="assets/mur-fond.webp"
+                     srcset="assets/mur-fond-md.webp 1280w, assets/mur-fond.webp 2400w"
+                     sizes="100vw">
+            </div>
+
+            <div class="layer layer-maison" id="layerMaison">
+                <img alt="" decoding="async"
+                     src="assets/maison-sans-porte.webp"
+                     srcset="assets/maison-sans-porte-md.webp 1280w, assets/maison-sans-porte.webp 2400w"
+                     sizes="100vw">
+            </div>
+
+            <!-- Portes : charnières sur les côtés extérieurs -->
+            <div class="layer layer-door layer-door-left" id="layerDoorLeft">
+                <img alt="" decoding="async"
+                     src="assets/porte-gauche.webp"
+                     srcset="assets/porte-gauche-md.webp 1280w, assets/porte-gauche.webp 2400w"
+                     sizes="100vw">
+            </div>
+
+            <div class="layer layer-door layer-door-right" id="layerDoorRight">
+                <img alt="" decoding="async"
+                     src="assets/porte-droite.webp"
+                     srcset="assets/porte-droite-md.webp 1280w, assets/porte-droite.webp 2400w"
+                     sizes="100vw">
+            </div>
+
+            <!-- Lueur derrière les portes -->
+            <div class="door-glow" id="doorGlow"></div>
+
+            <div class="layer layer-statue" id="layerStatue">
+                <img alt="" decoding="async"
+                     src="assets/statue.webp"
+                     srcset="assets/statue-md.webp 1280w, assets/statue.webp 2400w"
+                     sizes="100vw">
+            </div>
+
+            <div class="layer layer-collines" id="layerCollines">
+                <img alt="" decoding="async"
+                     src="assets/collines-devant.webp"
+                     srcset="assets/collines-devant-md.webp 1280w, assets/collines-devant.webp 2400w"
+                     sizes="100vw">
+            </div>
+
+            <div class="layer layer-plantes" id="layerPlantes">
+                <img alt="" decoding="async"
+                     src="assets/plantes.webp"
+                     srcset="assets/plantes-md.webp 1280w, assets/plantes.webp 2400w"
+                     sizes="100vw">
+            </div>
+
+            <div class="layer layer-blees" id="layerBlees">
+                <img alt="" decoding="async"
+                     src="assets/blees-devant.webp"
+                     srcset="assets/blees-devant-md.webp 1280w, assets/blees-devant.webp 2400w"
+                     sizes="100vw">
+            </div>
+
+            <!-- Contenu révélé après ouverture des portes -->
+            <div class="reveal-content" id="revealContent">
+                <div class="reveal-inner">
+                    <p class="overline">Save the date</p>
+                    <h1 class="names">
+                        <span class="name-1">Colin</span>
+                        <span class="amp">&amp;</span>
+                        <span class="name-2">Nikta</span>
+                    </h1>
+                    <div class="ornament">
+                        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="10" x2="80" y2="10" stroke="currentColor" stroke-width="0.5"/>
+                            <circle cx="100" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                            <circle cx="100" cy="10" r="1" fill="currentColor"/>
+                            <line x1="120" y1="10" x2="200" y2="10" stroke="currentColor" stroke-width="0.5"/>
+                        </svg>
+                    </div>
+                    <p class="date-block">
+                        <span class="date-day">Samedi</span>
+                        <span class="date-main">5 Septembre 2026</span>
+                        <span class="date-time">à 15h30</span>
+                    </p>
+                    <button class="cta-button" onclick="document.getElementById('countdown').scrollIntoView({behavior:'smooth'})">
+                        Découvrir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 : Compte à rebours -->
+    <section class="countdown-section" id="countdown">
+        <div class="container">
+            <p class="section-overline">Plus que…</p>
+            <div class="countdown" id="countdownDisplay">
+                <div class="cd-unit">
+                    <span class="cd-num" id="cdDays">--</span>
+                    <span class="cd-label">jours</span>
+                </div>
+                <div class="cd-unit">
+                    <span class="cd-num" id="cdHours">--</span>
+                    <span class="cd-label">heures</span>
+                </div>
+                <div class="cd-unit">
+                    <span class="cd-num" id="cdMinutes">--</span>
+                    <span class="cd-label">minutes</span>
+                </div>
+                <div class="cd-unit">
+                    <span class="cd-num" id="cdSeconds">--</span>
+                    <span class="cd-label">secondes</span>
+                </div>
+            </div>
+            <p class="countdown-subtitle">avant le grand jour</p>
+        </div>
+    </section>
+
+    <!-- SECTION 3 : Le lieu -->
+    <section class="location-section" id="location">
+        <div class="container">
+            <p class="section-overline">Le lieu</p>
+            <h2>Place de la Libération</h2>
+            <p class="location-address">93160 Noisy-le-Grand</p>
+
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps?q=Place+de+la+Lib%C3%A9ration,+93160+Noisy-le-Grand&output=embed"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Place+de+la+Lib%C3%A9ration,+93160+Noisy-le-Grand"
+               target="_blank"
+               rel="noopener"
+               class="map-button">
+                Itinéraire vers le lieu
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION 4 : RSVP -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="container">
+            <p class="section-overline">Votre présence</p>
+            <h2>Confirmez votre venue</h2>
+            <p class="rsvp-intro">
+                Nous serions heureux de partager ce moment avec vous.<br>
+                Merci de répondre via le formulaire ci-dessous.
+            </p>
+
+            <a href="https://forms.gle/1o6hCjkzYdsX6F4n6"
+               target="_blank"
+               rel="noopener"
+               class="rsvp-button">
+                Répondre au formulaire
+            </a>
+
+            <p class="rsvp-contact">
+                Pour toute question :<br>
+                <a href="tel:+33764410286">07 64 41 02 86</a> ·
+                <a href="mailto:colinnoel007@gmail.com">colinnoel007@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Colin &amp; Nikta · 5 septembre 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
