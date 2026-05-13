@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colin &amp; Nikta · Save the date · 5 septembre 2026</title>
+    <meta name="description" content="Save the date — Colin & Nikta se marient le 5 septembre 2026. Cérémonie à la mairie de Noisy-le-Grand puis réception à la Faisanderie d'Arcueil.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Colin & Nikta · Save the date · 5 septembre 2026">
+    <meta property="og:description" content="Nous nous marions le 5 septembre 2026. Mairie de Noisy-le-Grand puis réception à la Faisanderie d'Arcueil.">
+    <meta property="og:url" content="https://ocnil.github.io/notre-mariage-a-la-Faisanderie/">
+    <meta property="og:image" content="https://ocnil.github.io/notre-mariage-a-la-Faisanderie/assets/maison.webp">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Colin & Nikta · Save the date · 5 septembre 2026">
+    <meta name="twitter:description" content="Nous nous marions le 5 septembre 2026. Cérémonie civile à Noisy-le-Grand puis réception à la Faisanderie d'Arcueil.">
+    <meta name="twitter:image" content="https://ocnil.github.io/notre-mariage-a-la-Faisanderie/assets/maison.webp">
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Italiana&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Préchargement intelligent : assets-mobile pour mobile, assets HD pour desktop -->
+    <link rel="preload" as="image" href="assets-mobile/aqueduc.webp" media="(max-width: 600px)">
+    <link rel="preload" as="image" href="assets/aqueduc.webp" media="(min-width: 601px)">
+    <link rel="preload" as="image" href="assets-mobile/mur-fond.webp" media="(max-width: 600px)">
+    <link rel="preload" as="image" href="assets/mur-fond.webp" media="(min-width: 601px)">
+    <link rel="preload" as="image" href="assets-mobile/maison.webp" media="(max-width: 600px)">
+    <link rel="preload" as="image" href="assets/maison.webp" media="(min-width: 601px)">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+    <!-- Écran de chargement -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <p class="loader-text">C &amp; N</p>
+            <div class="loader-bar"><div class="loader-bar-fill" id="loaderBarFill"></div></div>
+            <p class="loader-subtitle">Chargement…</p>
+        </div>
+    </div>
+
+    <!-- Indicateur de scroll -->
+    <div class="scroll-hint" id="scrollHint">
+        <span>Faites défiler</span>
+        <div class="scroll-arrow"></div>
+    </div>
+
+    <!-- ========== SECTION 1 : Animation parallaxe ========== -->
+    <section class="parallax-stage" id="stage">
+        <div class="scene-container">
+            <div class="layer-sky" id="sky"></div>
+
+            <div class="layer layer-aqueduc" id="layerAqueduc">
+                <picture>
+                    <source media="(max-width: 600px)"
+                            srcset="assets-mobile/aqueduc-md.webp 720w, assets-mobile/aqueduc.webp 1080w"
+                            sizes="100vw">
+                    <img alt="Aqueduc historique en feutrine"
+                         src="assets/aqueduc.webp"
+                         srcset="assets/aqueduc-md.webp 1280w, assets/aqueduc.webp 2400w"
+                         sizes="100vw" decoding="async">
+                </picture>
+            </div>
+
+            <div class="layer layer-mur" id="layerMur">
+                <picture>
+                    <source media="(max-width: 600px)"
+                            srcset="assets-mobile/mur-fond-md.webp 720w, assets-mobile/mur-fond.webp 1080w"
+                            sizes="100vw">
+                    <img alt="Mur de fond en feutrine"
+                         src="assets/mur-fond.webp"
+                         srcset="assets/mur-fond-md.webp 1280w, assets/mur-fond.webp 2400w"
+                         sizes="100vw" decoding="async">
+                </picture>
+            </div>
+
+            <div class="layer layer-maison" id="layerMaison">
+                <picture>
+                    <source media="(max-width: 600px)"
+                            srcset="assets-mobile/maison-md.webp 720w, assets-mobile/maison.webp 1080w"
+                            sizes="100vw">
+                    <img alt="Bâtisse de réception en feutrine, La Faisanderie d'Arcueil"
+                         src="assets/maison.webp"
+                         srcset="assets/maison-md.webp 1280w, assets/maison.webp 2400w"
+                         sizes="100vw" decoding="async">
+                </picture>
+            </div>
+
+            <!-- Lueur qui émerge depuis la porte -->
+            <div class="door-glow" id="doorGlow"></div>
+
+            <div class="layer layer-statue" id="layerStatue">
+                <picture>
+                    <source media="(max-width: 600px)"
+                            srcset="assets-mobile/statue-md.webp 720w, assets-mobile/statue.webp 1080w"
+                            sizes="100vw">
+                    <img alt="Statue devant le bâtiment"
+                         src="assets/statue.webp"
+                         srcset="assets/statue-md.webp 1280w, assets/statue.webp 2400w"
+                         sizes="100vw" decoding="async">
+                </picture>
+            </div>
+
+            <div class="layer layer-collines" id="layerCollines">
+                <picture>
+                    <source media="(max-width: 600px)"
+                            srcset="assets-mobile/collines-devant-md.webp 720w, assets-mobile/collines-devant.webp 1080w"
+                            sizes="100vw">
+                    <img alt="Collines de feutrine au premier plan"
+                         src="assets/collines-devant.webp"
+                         srcset="assets/collines-devant-md.webp 1280w, assets/collines-devant.webp 2400w"
+                         sizes="100vw" decoding="async">
+                </picture>
+            </div>
+
+            <div class="layer layer-plantes" id="layerPlantes">
+                <picture>
+                    <source media="(max-width: 600px)"
+                            srcset="assets-mobile/plantes-md.webp 720w, assets-mobile/plantes.webp 1080w"
+                            sizes="100vw">
+                    <img alt="Plantes en feutrine"
+                         src="assets/plantes.webp"
+                         srcset="assets/plantes-md.webp 1280w, assets/plantes.webp 2400w"
+                         sizes="100vw" decoding="async">
+                </picture>
+            </div>
+
+            <div class="layer layer-blees" id="layerBlees">
+                <picture>
+                    <source media="(max-width: 600px)"
+                            srcset="assets-mobile/blees-devant-md.webp 720w, assets-mobile/blees-devant.webp 1080w"
+                            sizes="100vw">
+                    <img alt="Blés et fleurs séchées au premier plan"
+                         src="assets/blees-devant.webp"
+                         srcset="assets/blees-devant-md.webp 1280w, assets/blees-devant.webp 2400w"
+                         sizes="100vw" decoding="async">
+                </picture>
+            </div>
+
+            <div class="reveal-content" id="revealContent">
+                <div class="reveal-inner">
+                    <p class="overline">Save the date</p>
+                    <h1 class="names">
+                        <span class="name-1">Colin</span>
+                        <span class="amp">&amp;</span>
+                        <span class="name-2">Nikta</span>
+                    </h1>
+
+                    <div class="couple-medallion">
+                        <img alt="Colin et Nikta en feutrine, médaillon"
+                             src="assets/couple-medaillon.webp"
+                             srcset="assets/couple-medaillon-md.webp 480w, assets/couple-medaillon.webp 800w"
+                             sizes="(max-width: 600px) 180px, 240px"
+                             loading="lazy">
+                    </div>
+
+                    <div class="ornament">
+                        <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <line x1="0" y1="10" x2="80" y2="10" stroke="currentColor" stroke-width="0.5"/>
+                            <circle cx="100" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                            <circle cx="100" cy="10" r="1" fill="currentColor"/>
+                            <line x1="120" y1="10" x2="200" y2="10" stroke="currentColor" stroke-width="0.5"/>
+                        </svg>
+                    </div>
+                    <p class="date-block">
+                        <span class="date-day">Samedi</span>
+                        <span class="date-main">5 Septembre 2026</span>
+                        <span class="date-time">à 15h00</span>
+                    </p>
+                    <button class="cta-button" onclick="document.getElementById('countdown').scrollIntoView({behavior:'smooth'})">
+                        Découvrir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION : Invitation chaleureuse ========== -->
+    <section class="invitation-section" id="invitation">
+        <div class="container">
+            <p class="section-overline">Avec joie</p>
+            <h2 class="invitation-title">Vous êtes invité·e</h2>
+            <p class="invitation-text">
+                Nous avons le plaisir de vous convier à notre mariage
+                le <strong>samedi 5 septembre 2026</strong>,
+                et aimerions de tout cœur vous avoir avec nous pour
+                célébrer ce jour si particulier.
+            </p>
+
+            <a href="https://forms.gle/1o6hCjkzYdsX6F4n6"
+               target="_blank" rel="noopener"
+               class="rsvp-button invitation-button">
+                Confirmer ma venue
+            </a>
+
+            <p class="invitation-hint">Merci de répondre via le formulaire</p>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2 : Compte à rebours ========== -->
+    <section class="countdown-section" id="countdown">
+        <div class="container">
+            <p class="section-overline">Plus que…</p>
+            <div class="countdown" id="countdownDisplay" aria-live="polite">
+                <div class="cd-unit">
+                    <span class="cd-num" id="cdDays">·</span>
+                    <span class="cd-label">jours</span>
+                </div>
+                <div class="cd-unit">
+                    <span class="cd-num" id="cdHours">·</span>
+                    <span class="cd-label">heures</span>
+                </div>
+                <div class="cd-unit">
+                    <span class="cd-num" id="cdMinutes">·</span>
+                    <span class="cd-label">minutes</span>
+                </div>
+                <div class="cd-unit">
+                    <span class="cd-num" id="cdSeconds">·</span>
+                    <span class="cd-label">secondes</span>
+                </div>
+            </div>
+            <p class="countdown-subtitle">avant le grand jour</p>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3 : Lieux ========== -->
+    <section class="location-section" id="location">
+        <div class="container container-wide">
+            <p class="section-overline">Les lieux</p>
+            <h2>Où nous rejoindre</h2>
+            <p class="section-intro">
+                La journée se déroule en deux temps : la cérémonie civile à la mairie,
+                puis la réception au cœur d'un domaine historique.
+            </p>
+
+            <div class="venues-grid">
+                <article class="venue-card">
+                    <p class="venue-tag">15h00 — Cérémonie civile</p>
+                    <h3 class="venue-name">Mairie de Noisy-le-Grand</h3>
+                    <p class="venue-address">
+                        Place de la Libération<br>
+                        93160 Noisy-le-Grand
+                    </p>
+                    <div class="venue-map">
+                        <iframe
+                            src="https://www.google.com/maps?q=Place+de+la+Lib%C3%A9ration,+93160+Noisy-le-Grand&output=embed"
+                            width="100%" height="280" style="border:0;"
+                            allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Carte de la mairie de Noisy-le-Grand">
+                        </iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Place+de+la+Lib%C3%A9ration,+93160+Noisy-le-Grand"
+                       target="_blank" rel="noopener" class="map-button">
+                        Itinéraire
+                    </a>
+                </article>
+
+                <article class="venue-card">
+                    <p class="venue-tag">17h00 — Réception</p>
+                    <h3 class="venue-name">La Faisanderie d'Arcueil</h3>
+                    <p class="venue-address">
+                        1 Rue de la Citadelle<br>
+                        94110 Arcueil
+                    </p>
+                    <div class="venue-map">
+                        <iframe
+                            src="https://www.google.com/maps?q=La+Faisanderie+d%27Arcueil,+1+Rue+de+la+Citadelle,+94110+Arcueil&output=embed"
+                            width="100%" height="280" style="border:0;"
+                            allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Carte de la Faisanderie d'Arcueil">
+                        </iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=La+Faisanderie+d%27Arcueil,+1+Rue+de+la+Citadelle,+94110+Arcueil"
+                       target="_blank" rel="noopener" class="map-button">
+                        Itinéraire
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4 : Déroulé de la journée ========== -->
+    <section class="timeline-section" id="schedule">
+        <div class="container">
+            <p class="section-overline">Le déroulé</p>
+            <h2>La journée minute par minute</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">15h00 — 16h00</div>
+                    <div class="timeline-content">
+                        <h3>Cérémonie civile</h3>
+                        <p>Mairie de Noisy-le-Grand · Place de la Libération</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-transit">
+                    <div class="timeline-time">≈ 16h00 — 17h00</div>
+                    <div class="timeline-content">
+                        <h3>Trajet vers Arcueil</h3>
+                        <p>Comptez 30 à 45 minutes selon le trafic.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">17h00</div>
+                    <div class="timeline-content">
+                        <h3>Arrivée à la Faisanderie</h3>
+                        <p>Accueil dans le parc du domaine.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">17h30</div>
+                    <div class="timeline-content">
+                        <h3>Cérémonie iranienne — Sofreh Aghd</h3>
+                        <p>Cérémonie traditionnelle d'environ 30 minutes, ouverte à tous nos invités.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">18h00</div>
+                    <div class="timeline-content">
+                        <h3>Cocktail</h3>
+                        <p>Apéritif dans le parc.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">20h00</div>
+                    <div class="timeline-content">
+                        <h3>Dîner</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-last">
+                    <div class="timeline-time">Jusqu'à 02h00</div>
+                    <div class="timeline-content">
+                        <h3>Soirée dansante</h3>
+                        <p>On danse jusqu'au bout de la nuit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 5 : Infos pratiques ========== -->
+    <section class="infos-section" id="infos">
+        <div class="container container-wide">
+            <p class="section-overline">Infos pratiques</p>
+            <h2>Tout pour bien préparer votre venue</h2>
+
+            <!-- Parking -->
+            <div class="info-block">
+                <h3 class="info-title">Stationnement</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>À la Faisanderie</h4>
+                        <p>Parking sur place, gratuit pour tous nos invités.</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>À Noisy-le-Grand</h4>
+                        <p>Le stationnement près de la mairie peut être difficile. Nous vous recommandons d'arriver <strong>20 à 30 minutes en avance</strong>.</p>
+                        <p class="info-detail">
+                            Parking conseillé&nbsp;:<br>
+                            <strong>Parking Indigo Noisy-Centre</strong><br>
+                            12 bis Av. Emile Cossonneau, 93160 Noisy-le-Grand
+                        </p>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Parking+Indigo+Noisy-Centre,+12+bis+Avenue+Emile+Cossonneau,+93160+Noisy-le-Grand"
+                           target="_blank" rel="noopener" class="info-link">
+                            Itinéraire vers le parking →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transports -->
+            <div class="info-block">
+                <h3 class="info-title">Transports en commun</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>Mairie de Noisy-le-Grand</h4>
+                        <p><strong>RER A</strong> · station <em>Noisy-le-Grand – Mont d'Est</em></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Faisanderie d'Arcueil</h4>
+                        <p><strong>RER B</strong> · station <em>Arcueil-Cachan</em> (5 min à pied)</p>
+                        <p class="info-detail">Bus 184 · arrêt <em>Cousin de Méricourt</em> (2 min à pied)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hébergements -->
+            <div class="info-block">
+                <h3 class="info-title">Hébergements à proximité</h3>
+                <p class="info-subtitle">Si vous souhaitez passer la nuit après la soirée, voici quelques pistes proches de la Faisanderie.</p>
+
+                <h4 class="info-subheading">Hôtels</h4>
+                <div class="hotels-grid">
+                    <article class="hotel-card">
+                        <h5>Hôtel des Arcades de Cachan</h5>
+                        <p class="hotel-location">Cachan · 3 ★</p>
+                        <p class="hotel-detail">≈ 1,5 km de la Faisanderie<br>À partir de ~70 €/nuit</p>
+                        <p class="hotel-meta">Parking gratuit · Restaurant sur place · RER B Arcueil-Cachan à 650 m</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=H%C3%B4tel+des+Arcades+de+Cachan+Grand+Paris+Sud,+2+rue+Mirabeau+94230+Cachan"
+                           target="_blank" rel="noopener" class="info-link">Voir sur Maps →</a>
+                    </article>
+
+                    <article class="hotel-card">
+                        <h5>Campanile Prime Villejuif</h5>
+                        <p class="hotel-location">Villejuif</p>
+                        <p class="hotel-detail">≈ 2,5 km de la Faisanderie</p>
+                        <p class="hotel-meta">Métro 7 / RER C à proximité</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Campanile+Prime+Villejuif"
+                           target="_blank" rel="noopener" class="info-link">Voir sur Maps →</a>
+                    </article>
+
+                    <article class="hotel-card">
+                        <h5>Séjours &amp; Affaires Paris Bagneux</h5>
+                        <p class="hotel-location">Bagneux · Appart-hôtel</p>
+                        <p class="hotel-detail">≈ 3 km de la Faisanderie</p>
+                        <p class="hotel-meta">Idéal en famille — kitchenette dans chaque studio</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=S%C3%A9jours+et+Affaires+Paris+Bagneux"
+                           target="_blank" rel="noopener" class="info-link">Voir sur Maps →</a>
+                    </article>
+                </div>
+
+                <h4 class="info-subheading">Locations entre particuliers</h4>
+                <p>Pour un séjour plus intimiste, en famille ou entre amis, nous vous recommandons de chercher un logement sur ces plateformes dans les communes proches&nbsp;: <em>Arcueil, Cachan, Villejuif, Gentilly, Le Kremlin-Bicêtre, Bagneux, Montrouge</em>.</p>
+                <div class="rentals-list">
+                    <a href="https://www.airbnb.fr/s/Arcueil" target="_blank" rel="noopener" class="rental-link">
+                        <strong>Airbnb</strong>
+                        <span>Logements près d'Arcueil</span>
+                    </a>
+                    <a href="https://www.booking.com/searchresults.fr.html?ss=Arcueil" target="_blank" rel="noopener" class="rental-link">
+                        <strong>Booking.com</strong>
+                        <span>Logements près d'Arcueil</span>
+                    </a>
+                    <a href="https://www.abritel.fr/search/keywords:arcueil-france" target="_blank" rel="noopener" class="rental-link">
+                        <strong>Abritel / Vrbo</strong>
+                        <span>Logements près d'Arcueil</span>
+                    </a>
+                </div>
+                <p class="info-tip">💡 Ces communes sont toutes desservies par le RER B ou le tramway T3, ce qui facilite le retour après la soirée.</p>
+            </div>
+
+            <!-- Dress code -->
+            <div class="info-block">
+                <h3 class="info-title">Dress code</h3>
+                <div class="dresscode">
+                    <p class="dresscode-main"><strong>Tons pastel</strong></p>
+                    <p>Rose poudré, bleu ciel, lavande, vert d'eau, beige, ivoire&hellip;<br>
+                    Tout ce qui est doux et lumineux est le bienvenu.</p>
+
+                    <div class="color-swatches" aria-hidden="true">
+                        <span class="swatch" style="background:#f4d4d4" title="Rose poudré"></span>
+                        <span class="swatch" style="background:#cfe0ec" title="Bleu ciel"></span>
+                        <span class="swatch" style="background:#e0d4ec" title="Lavande"></span>
+                        <span class="swatch" style="background:#d4e8d8" title="Vert d'eau"></span>
+                        <span class="swatch" style="background:#ede4d0" title="Beige"></span>
+                        <span class="swatch" style="background:#f5ede0" title="Ivoire"></span>
+                    </div>
+
+                    <p class="dresscode-rules">
+                        Merci d'éviter simplement les <strong>couleurs vives ou très saturées</strong> (fluo, rouge vif, noir profond&hellip;) pour préserver l'harmonie de la journée.<br>
+                        Niveau&nbsp;: <strong>cocktail</strong> — chic, sans être en grande tenue.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 6 : RSVP ========== -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="container">
+            <p class="section-overline">Votre présence</p>
+            <h2>Confirmez votre venue</h2>
+            <p class="rsvp-intro">
+                Nous serions heureux de partager ce moment avec vous.<br>
+                Merci de répondre via le formulaire ci-dessous.
+            </p>
+
+            <a href="https://forms.gle/1o6hCjkzYdsX6F4n6"
+               target="_blank" rel="noopener"
+               class="rsvp-button">
+                Répondre au formulaire
+            </a>
+
+            <p class="rsvp-contact">
+                Pour toute question&nbsp;:<br>
+                <a href="tel:+33764410286">07 64 41 02 86</a> ·
+                <a href="mailto:colinnoel007@gmail.com">colinnoel007@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Colin &amp; Nikta · 5 septembre 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
